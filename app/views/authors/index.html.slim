@@ -1,0 +1,13 @@
+.px-24
+    h1 This is Author index
+
+    = render "form", form: @form
+
+    table#authors.table
+        thead
+            tr
+                th.border Name
+                th.border Music
+        tbody
+            - @authors.each do |author|
+                = render "author_row", author: author

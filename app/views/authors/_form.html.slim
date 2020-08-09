@@ -1,0 +1,12 @@
+= simple_form_for form, url: authors_path, method: :post, remote: true do |f|
+    - if form.errors.any?
+        .alert.alert-danger = form.errors.full_messages.join(", ")
+
+    = form.title
+    = f.simple_fields_for :author do |a|
+        h1 Artist
+        = a.input :name
+    = f.simple_fields_for :music do |m|
+        h1 Music
+        = m.input :title
+    = f.submit

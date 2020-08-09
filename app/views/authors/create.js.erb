@@ -1,0 +1,2 @@
+$("#new_author_form").html("<%= j render "form", form: AuthorForm.new %>")
+$("#authors tbody").prepend("<%= j render "author_row", author: @form.author %>")
